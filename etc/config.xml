@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+     <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+        <default>
+            <voiceSearch>
+                <custumization>
+                    <button_text>Voice Search</button_text>
+                    <button_text_color>#ffffff</button_text_color>
+                    <button_text_background_color>#1979c3</button_text_background_color>
+                    <button_text_background_hover_color>#006bb4</button_text_background_hover_color>
+                    <button_icon_color>#ffffff</button_icon_color>
+                    <button_icon_background_color>#1979c3</button_icon_background_color>
+                    <button_icon_background_hover_color>#006bb4</button_icon_background_hover_color>
+                </custumization>
+                <configuration>
+                    <automatically_get_language>1</automatically_get_language>
+                    <choose_language>en_US</choose_language>
+                </configuration>
+            </voiceSearch>
+        </default>
+    </config>

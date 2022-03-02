@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="gfnl" translate="label" sortOrder="10">
+            <label>GFNL</label>
+        </tab>
+        <section id="voiceSearch" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Voice Search</label>
+            <tab>gfnl</tab>
+            <resource>GFNL_VoiceSearch::voicesearch_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General</label>
+                <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Module Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="custumization" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <depends>
+                    <field id="voiceSearch/general/enable">1</field>
+                </depends>
+                <label>Custumization</label>
+                
+                <field id="choose_text_or_icon" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Choose Text or Icon</label>
+                    <source_model>GFNL\VoiceSearch\Model\Config\Source\TextOrIcon</source_model>
+                </field>
+                <field id="button_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Text</label>
+                    <depends>
+                        <field id="voiceSearch/custumization/choose_text_or_icon">text</field>
+                    </depends>
+
+                </field>
+                <field id="button_text_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <frontend_model>GFNL\VoiceSearch\Block\ColorPicker</frontend_model>
+                    <backend_model>GFNL\VoiceSearch\Model\Config\Backend\Color</backend_model>
+                    <depends>
+                        <field id="voiceSearch/custumization/choose_text_or_icon">text</field>
+                    </depends>
+                </field>
+                <field id="button_text_background_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Background Color</label>
+                    <frontend_model>GFNL\VoiceSearch\Block\ColorPicker</frontend_model>
+                    <backend_model>GFNL\VoiceSearch\Model\Config\Backend\Color</backend_model>
+                    <depends>
+                        <field id="voiceSearch/custumization/choose_text_or_icon">text</field>
+                    </depends>
+                </field>
+                <field id="button_text_background_hover_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Background Hover Color</label>
+                    <frontend_model>GFNL\VoiceSearch\Block\ColorPicker</frontend_model>
+                    <backend_model>GFNL\VoiceSearch\Model\Config\Backend\Color</backend_model>
+                    <depends>
+                        <field id="voiceSearch/custumization/choose_text_or_icon">text</field>
+                    </depends>
+                </field>
+                <field id="button_icon_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Icon Color</label>
+                    <frontend_model>GFNL\VoiceSearch\Block\ColorPicker</frontend_model>
+                    <backend_model>GFNL\VoiceSearch\Model\Config\Backend\Color</backend_model>
+                    <depends>
+                        <field id="voiceSearch/custumization/choose_text_or_icon">icon</field>
+                    </depends>
+                </field>
+                <field id="button_icon_background_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Background Color</label>
+                    <frontend_model>GFNL\VoiceSearch\Block\ColorPicker</frontend_model>
+                    <backend_model>GFNL\VoiceSearch\Model\Config\Backend\Color</backend_model>
+                    <depends>
+                        <field id="voiceSearch/custumization/choose_text_or_icon">icon</field>
+                    </depends>
+                </field>
+                <field id="button_icon_background_hover_color" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Button Background Hover Color</label>
+                    <frontend_model>GFNL\VoiceSearch\Block\ColorPicker</frontend_model>
+                    <backend_model>GFNL\VoiceSearch\Model\Config\Backend\Color</backend_model>
+                    <depends>
+                        <field id="voiceSearch/custumization/choose_text_or_icon">icon</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <depends>
+                    <field id="voiceSearch/general/enable">1</field>
+                </depends>
+                <label>Configuration</label>
+                
+                <field id="automatically_get_language" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Automatically get e-commerce language</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="choose_language" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <depends>
+                    <field id="voiceSearch/configuration/automatically_get_language">0</field>
+                </depends>
+                    <label>Choose Language</label>
+                    <source_model>Magento\Config\Model\Config\Source\Locale</source_model>
+                </field>
+
+            </group>
+        </section>
+    </system>
+</config>
